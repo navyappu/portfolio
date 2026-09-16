@@ -140,14 +140,26 @@ The palette is defined once as CSS variables in `src/index.css` under `@theme` �
 
 **Option A — Git (recommended)**
 
-1. Push this folder to a GitHub repository.
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repository.
+The repository already exists: **https://github.com/navyappu/portfolio** (public, default branch `main`).
+
+1. Go to [vercel.com/new](https://vercel.com/new) and sign in with **GitHub**.
+2. Find **navyappu/portfolio** in the list and click **Import**. If it isn't listed, click *Adjust GitHub App Permissions* and grant Vercel access to the repo.
 3. Vercel auto-detects Vite. Confirm the settings:
    - **Framework preset:** Vite
    - **Build command:** `npm run build`
    - **Output directory:** `dist`
    - **Install command:** `npm install`
-4. Click **Deploy**. Every later push to the default branch redeploys automatically.
+   - No environment variables are needed.
+4. Click **Deploy**. You'll get a URL like `https://portfolio-navyappu.vercel.app`.
+5. Copy that URL into `index.html` — the `canonical` and `og:url` tags — then commit and push.
+
+Every later push to `main` redeploys automatically:
+
+```bash
+git add -A
+git commit -m "Update portfolio content"
+git push
+```
 
 **Option B — Vercel CLI**
 
